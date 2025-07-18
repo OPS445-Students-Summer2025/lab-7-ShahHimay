@@ -1,0 +1,10 @@
+OPS445 Lab Report - System Information for running ./CheckLab7.py
+=================================================================
+    User login name: oem
+    Linux system name: hshah104
+    Python executable: /usr/bin/python3
+    Python version: 3123
+    OS Platform: linux
+    Working Directory: /home/oem/ops445/lab7
+    Start at: Fri Jul 18 01:16:29 2025
+=================================================================

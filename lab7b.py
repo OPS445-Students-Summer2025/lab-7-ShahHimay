@@ -28,3 +28,34 @@ def sum_times(t1, t2):
 def format_time(t):
     """Return time in HH:MM:SS format."""
     return f"{t.hour:02}:{t.minute:02}:{t.second:02}"
+
+def valid_time(t):
+    return (
+        isinstance(t, Time)
+        and isinstance(t.hour, int)
+        and isinstance(t.minute, int)
+        and isinstance(t.second, int)
+        and t.hour >= 0
+        and 0 <= t.minute < 60
+        and 0 <= t.second < 60
+    )
+
+def change_time(t, seconds):
+    if not valid_time(t):
+        return
+
+    t.second += seconds
+
+    t.minute += t.second // 60
+    t.second %= 60
+
+    t.hour += t.minute // 60
+    t.minute %= 60
+
+    while t.second < 0:
+        t.minute -= 1
+        t.second += 60
+
+    while t.minute < 0:
+        t.hour -= 1
+        t.minute += 60
